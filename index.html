@@ -741,12 +741,19 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding
 <nav id="navbar">
   <nav id="navbar" role="navigation" aria-label="Main navigation"></nav>
   <div class="container">
-    <div class="nav-inner">
-      <div class="nav-logo" onclick="goPage('home')">
-        <div class="nav-logo-h">Hampton</div>
-        <div class="nav-logo-rule"></div>
-        <div class="nav-logo-s">Blueprint</div>
-      </div>
+    <div class="nav-logo" onclick="goPage('home')">
+  <!-- REPLACE hampton-logo.png with your actual filename -->
+  <img src="hampton-logo.png"
+       alt="Hampton Blueprint Logo"
+       style="height:44px;width:auto;display:block;object-fit:contain"
+       onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+  <!-- Fallback text logo shows if image fails to load -->
+  <div style="display:none;flex-direction:column">
+    <div class="nav-logo-h">Hampton</div>
+    <div class="nav-logo-rule"></div>
+    <div class="nav-logo-s">Blueprint</div>
+  </div>
+</div>
       <ul class="nav-links" id="navLinks">
         <li><button onclick="goPage('about')">About</button></li>
         <li class="nav-dropdown">
