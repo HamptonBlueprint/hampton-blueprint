@@ -582,7 +582,29 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding
 /* ════════════════════════════════════════
    RESPONSIVE
 ════════════════════════════════════════ */
-@media(max-width:768px){
+/* ── HERO: SHIFT CONTENT LEFT ── */
+.hero .container{
+  max-width:none;
+  margin:0;
+  padding-left:6%;
+  padding-right:32px;
+}
+
+/* ── WHY SECTION: FULL-WIDTH CARDS ── */
+.why-section .grid-2{
+  grid-template-columns:1fr;
+  gap:56px;
+}
+.why-section .why-cards{
+  gap:28px;
+}
+.why-section .why-card{
+  padding:36px;
+}
+.why-section .why-callout{
+  margin-top:0;
+}
+   @media(max-width:768px){
   :root{--sec-pad:60px}
   .nav-links{display:none;flex-direction:column;gap:14px}
   .nav-links.open{display:flex;position:absolute;top:100%;left:0;right:0;background:rgba(10,22,40,.98);padding:24px 32px;border-top:1px solid rgba(255,255,255,.07)}
