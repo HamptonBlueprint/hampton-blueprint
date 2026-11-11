@@ -2190,15 +2190,12 @@ function goPage(id){
 }
 
 // ── RESTORE PAGE ON REFRESH ──
-// Reads the URL hash when the page first loads
-(function(){
+(function restorePageOnLoad(){
   const hash = window.location.hash.replace('#','');
-  const valid = ['home','about','blog','svc-assessment','svc-sprint','svc-retainer',
-                 'privacy','terms','cs-meridian','cs-coastal','cs-premier'];
-  if(hash && valid.includes(hash)){
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    const p = document.getElementById('page-' + hash);
-    if(p){ p.classList.add('active'); }
+  const target = hash && document.getElementById('page-' + hash);
+  if(target){
+    document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+    target.classList.add('active');
   }
 })();
 
@@ -2209,6 +2206,7 @@ function scrollToSection(id){
   if(el){
     const top = el.getBoundingClientRect().top + window.scrollY - 80;
     window.scrollTo({ top: top, behavior: 'smooth' });
+     window.location.hash = id;
   }
 }
 
